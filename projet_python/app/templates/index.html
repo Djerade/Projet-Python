@@ -1,7 +1,24 @@
 <!DOCTYPE html>
 <html>
   <body>
-    <h1>Bonjour</h1>
-    <p>Welcome to my first Django project!</p>
+    {% for semaine in emploi_temps_global %}
+    <div>
+      {% for journee in semaine %}
+      <div>
+        {% for key, value in journee.items %} {% if key == 'nom_jour' %}
+        <div>
+          <p>{{ value }}</p>
+        </div>
+        {% else %}
+        <div>
+          {% for ue in value %}
+          <p>{{ ue }}</p>
+          {% endfor %}
+        </div>
+        {% endif %} {% endfor %}
+      </div>
+      {% endfor %}
+    </div>
+    {% endfor%}
   </body>
 </html>
