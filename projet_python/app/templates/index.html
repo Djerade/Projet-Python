@@ -1,24 +1,23 @@
-<!DOCTYPE html>
-<html>
-  <body>
-    {% for semaine in emploi_temps_global %}
+{% extends "_base.html" %} {% block content %} {% load static %}
+<div>
+  {% for semaine in emploi_temps_global %}
+  <div>
+    {% for journee in semaine %}
     <div>
-      {% for journee in semaine %}
+      {% for key, value in journee.items %} {% if key == 'nom_jour' %}
       <div>
-        {% for key, value in journee.items %} {% if key == 'nom_jour' %}
-        <div>
-          <p>{{ value }}</p>
-        </div>
-        {% else %}
-        <div>
-          {% for ue in value %}
-          <p>{{ ue }}</p>
-          {% endfor %}
-        </div>
-        {% endif %} {% endfor %}
+        <p>{{ value }}</p>
       </div>
-      {% endfor %}
+      {% else %}
+      <div>
+        {% for ue in value %}
+        <p>{{ ue }}</p>
+        {% endfor %}
+      </div>
+      {% endif %} {% endfor %}
     </div>
-    {% endfor%}
-  </body>
-</html>
+    {% endfor %}
+  </div>
+  {% endfor%}
+</div>
+{% endblock content %}

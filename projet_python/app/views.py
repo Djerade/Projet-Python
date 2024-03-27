@@ -86,18 +86,18 @@ def main():
             
 def app(request):
     # main()
-    enregistrement(list_ues)
-    main()
-    if list_ues.size_list() != 0 :
-        template = loader.get_template('index.html')
-        context = {
-            "emploi_temps_global": emploi_temps_global
-        }
-        # for i in emploi_temps_global:
-        #     context["semaines"] = i
+    # enregistrement(list_ues)
+    # main()
+    # if list_ues.size_list() != 0 :
+    #     template = loader.get_template('index.html')
+    #     context = {
+    #         "emploi_temps_global": emploi_temps_global
+    #     }
+    #     # for i in emploi_temps_global:
+    #     #     context["semaines"] = i
             
-        return HttpResponse(template.render(context, request))
+    #     return HttpResponse(template.render(context, request))
         
-    else:
-         template = loader.get_template('input.html')
+    # else:
+         template = loader.get_template('index.html')
          return HttpResponse(template.render())
