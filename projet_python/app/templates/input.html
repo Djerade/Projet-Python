@@ -46,9 +46,11 @@
           <div class="d-flex justify-content-around">
             <button class="btn btn-light">Annulé</button>
             <button type="submit" class="btn btn-secondary">Suivant</button>
-            <button type="submit" href="" class="btn btn-primary me-2">
-              Terminer
-            </button>
+            <a href="{% url 'enregistement' %}">
+              <button type="submit" class="btn btn-primary me-2">
+                Terminer
+              </button>
+            </a>
           </div>
         </form>
       </div>

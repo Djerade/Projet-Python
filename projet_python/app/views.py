@@ -86,7 +86,7 @@ def main():
             
 def app(request):
     if list_ues.size_list() != 0 :
-        # main()
+        main()
         print("-------")
         list_ues.print_list_eu()
         template = loader.get_template('index.html')
@@ -97,17 +97,16 @@ def app(request):
         #     context["semaines"] = i    
         return HttpResponse(template.render(context, request))
     else:
-        template = loader.get_template('page_vide.html')
+        template = loader.get_template('index.html')
         return HttpResponse(template.render())
 
 
 
 def enregistement(request):
     if request.method=="POST":
-        #  for key, value in request.POST.items():
         ue = Matier()
         ue.titre = request.POST['titre']
         ue.credit = request.POST['credit']
-        ue.heure = request.POST['heure']
+        ue.heure = int(request.POST['heure'])
         list_ues.add_matier(ue)
     return render(request, 'input.html' )
