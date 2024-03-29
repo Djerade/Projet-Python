@@ -15,17 +15,17 @@ emploi_temps_global= []
 
 jours = ["Lundi", "Mardi", "Mercredi", "Jeudi","Vendredi", "Samedi" ]
 
-def enregistrement(list_ue):
-   i = 1
-   while(i == 1):
-      ue = Matier()
-      print("-----nouvelle matière ------")
-      ue.titre = input("titre: ")
-      ue.credit = int(input("crédit: "))
-      ue.heure =int(input("heure: "))
-      list_ue.add_matier(ue)
-      print("une autre matier ? 1 == oui /  0 == Non")
-      i = int(input())
+# def enregistrement(list_ue):
+#    i = 1
+#    while(i == 1):
+#       ue = Matier()
+#       print("-----nouvelle matière ------")
+#       ue.titre = input("titre: ")
+#       ue.credit = int(input("crédit: "))
+#       ue.heure =int(input("heure: "))
+#       list_ue.add_matier(ue)
+#       print("une autre matier ? 1 == oui /  0 == Non")
+#       i = int(input())
 
 # Cette fonction retourne le nombre max de semaine
 def estimation_duree():
@@ -85,18 +85,29 @@ def main():
 
             
 def app(request):
-    enregistrement(list_ues)
-    main()
     if list_ues.size_list() != 0 :
+        # main()
+        print("-------")
+        list_ues.print_list_eu()
         template = loader.get_template('index.html')
         context = {
             "emploi_temps_global": emploi_temps_global
         }
         # for i in emploi_temps_global:
-        #     context["semaines"] = i
-            
+        #     context["semaines"] = i    
         return HttpResponse(template.render(context, request))
-        
     else:
-         template = loader.get_template('input.html')
-         return HttpResponse(template.render())
+        template = loader.get_template('page_vide.html')
+        return HttpResponse(template.render())
+
+
+
+def enregistement(request):
+    if request.method=="POST":
+        #  for key, value in request.POST.items():
+        ue = Matier()
+        ue.titre = request.POST['titre']
+        ue.credit = request.POST['credit']
+        ue.heure = request.POST['heure']
+        list_ues.add_matier(ue)
+    return render(request, 'input.html' )
