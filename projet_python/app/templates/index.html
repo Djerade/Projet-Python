@@ -17,52 +17,27 @@
               <thead>
                 <tr>
                   <th>Jour</th>
-                  <th>Matière</th>
-                  <th>Crédit</th>
-                  <th>Heure</th>
+                  <th>3h</th>
+                  <th>3h</th>
+                  <th>3h</th>
                 </tr>
               </thead>
               <tbody>
+                {% for journee in semaine %}
                 <tr>
-                  <td>Jacob</td>
-                  <td>53275531</td>
-                  <td>12 May 2017</td>
-                  <td>
-                    <label class="badge badge-danger">Pending</label>
-                  </td>
+                  {% for key, value in journee.items %}
+                  <div>
+                    {% if key == 'nom_jour'%}
+                    <td>{{ value }}</td>
+                    {% else %}
+                    <td>{{ value.0.titre }}</td>
+                    <td>{{ value.1.titre }}</td>
+                    <td>{{ value.3.titre }}</td>
+                    {% endif %}
+                  </div>
+                  {% endfor %}
                 </tr>
-                <tr>
-                  <td>Messsy</td>
-                  <td>53275532</td>
-                  <td>15 May 2017</td>
-                  <td>
-                    <label class="badge badge-warning">In progress</label>
-                  </td>
-                </tr>
-                <tr>
-                  <td>John</td>
-                  <td>53275533</td>
-                  <td>14 May 2017</td>
-                  <td>
-                    <label class="badge badge-info">Fixed</label>
-                  </td>
-                </tr>
-                <tr>
-                  <td>Peter</td>
-                  <td>53275534</td>
-                  <td>16 May 2017</td>
-                  <td>
-                    <label class="badge badge-success">Completed</label>
-                  </td>
-                </tr>
-                <tr>
-                  <td>Dave</td>
-                  <td>53275535</td>
-                  <td>20 May 2017</td>
-                  <td>
-                    <label class="badge badge-warning">In progress</label>
-                  </td>
-                </tr>
+                {% endfor %}
               </tbody>
             </table>
           </div>
