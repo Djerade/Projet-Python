@@ -1,10 +1,8 @@
 from django.template import loader
 from django.shortcuts import render
 from django.http import HttpResponse
-
 # Modules
 import random
-
 from app.Model.list_matier import ListUe
 from app.Model.classMatier import Matier
 
@@ -29,6 +27,8 @@ def estimation_duree():
 
     
 def generate():
+    emploi_temps_global.clear()
+    list_ues_copy = []
     list_ues_copy = list_ues
     for i in  range(0, estimation_duree()):
         emploi_temps_semain= [] 
@@ -42,7 +42,6 @@ def generate():
                         for ue in list_ues_copy.get_list():
                             if(ue_choose.titre == ue.titre):
                                 ue.update_time(ue_choose.heure)
-
                     else:
                         for ue in list_ues_copy.get_list():
                             if(ue_choose.titre == ue.titre):
@@ -54,10 +53,10 @@ def generate():
                 "nom_jour": jours[k],
                 "ue_jour": martierjournee
             })
-        martierjournee.clear()
+        # martierjournee.clear()
         emploi_temps_global.append(emploi_temps_semain)
     
-    emploi_temps_semain.clear()
+    # emploi_temps_semain.clear()
     
 
 
@@ -77,7 +76,6 @@ def app(request):
         return HttpResponse(template.render())
 
 def refraiche(request):
-    emploi_temps_global.clear()
     generate()
     template = loader.get_template('index.html')
     duree = estimation_duree()

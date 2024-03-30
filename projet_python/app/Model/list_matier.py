@@ -11,5 +11,6 @@ class ListUe():
     def print_list_eu(self):
       for ue in self.list:
         print (ue)
+        
     def size_list(self):
       return len(self.list)
