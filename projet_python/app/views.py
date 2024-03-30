@@ -10,24 +10,11 @@ from app.Model.classMatier import Matier
 
 # varaibles globales
 list_ues = ListUe()
-emploi_temps_semain= []   
+  
 emploi_temps_global= [] 
 
 jours = ["Lundi", "Mardi", "Mercredi", "Jeudi","Vendredi", "Samedi" ]
 
-# def enregistrement(list_ue):
-#    i = 1
-#    while(i == 1):
-#       ue = Matier()
-#       print("-----nouvelle matière ------")
-#       ue.titre = input("titre: ")
-#       ue.credit = int(input("crédit: "))
-#       ue.heure =int(input("heure: "))
-#       list_ue.add_matier(ue)
-#       print("une autre matier ? 1 == oui /  0 == Non")
-#       i = int(input())
-
-# Cette fonction retourne le nombre max de semaine
 def estimation_duree():
     heure_par_semaine = 54
     heure_total=0
@@ -39,62 +26,58 @@ def estimation_duree():
     else:
         return nbre_semaine
 
-   
 
-    #  print("semaine estimée")
-    #  print(estimation_duree())
     
-    
-def main():
+def generate():
+    list_ues_copy = list_ues
     for i in  range(0, estimation_duree()):
-        for jour in  jours:
+        emploi_temps_semain= [] 
+        for k in  range(0,len(jours)):
             martierjournee = []
-            for i in range(0, 3):
-                ue_choose = random.choice(list_ues.get_list())
+            for j in range(0, 3):
+                ue_choose = random.choice(list_ues_copy.get_list())
                 if(ue_choose.heure > 0):
                     martierjournee.append(ue_choose)
                     if (ue_choose.heure <= 3 ):  
-                        for ue in list_ues.get_list():
+                        for ue in list_ues_copy.get_list():
                             if(ue_choose.titre == ue.titre):
                                 ue.update_time(ue_choose.heure)
 
                     else:
-                        for ue in list_ues.get_list():
+                        for ue in list_ues_copy.get_list():
                             if(ue_choose.titre == ue.titre):
                                 ue.update_time(ue_choose.heure)
                                 # print('heure restant ', ue_choose.heure)
                 else:
                     print('temps ecoulé ')       
             emploi_temps_semain.append({
-                "nom_jour": jour,
+                "nom_jour": jours[k],
                 "ue_jour": martierjournee
             })
+          
 
 
 
         emploi_temps_global.append(emploi_temps_semain)
     
     
+    
     for x in  emploi_temps_semain:
         print("---" + x['nom_jour']+ "---")
         for ue in x['ue_jour']:
             print("-", ue.titre ," ", ue.heure )
-        
+                
         
 
 
             
 def app(request):
     if list_ues.size_list() != 0 :
-        main()
-        print("-------")
-        list_ues.print_list_eu()
+        generate()
         template = loader.get_template('index.html')
         context = {
             "emploi_temps_global": emploi_temps_global
-        }
-        # for i in emploi_temps_global:
-        #     context["semaines"] = i    
+        }    
         return HttpResponse(template.render(context, request))
     else:
         template = loader.get_template('index.html')

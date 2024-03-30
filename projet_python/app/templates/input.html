@@ -16,7 +16,7 @@
               class="form-control"
               id="titre"
               name="titre"
-              placeholder="Username" />
+              placeholder="Titre" />
           </div>
           <div class="form-group">
             <label for="exampleInputUsername1">Crédit</label>
@@ -25,7 +25,7 @@
               class="form-control"
               name="credit"
               id="credit"
-              placeholder="Username" />
+              placeholder="Crédit" />
           </div>
           <div class="form-group">
             <label for="exampleInputUsername1">Heure</label>
@@ -34,7 +34,7 @@
               class="form-control"
               id="heure"
               name="heure"
-              placeholder="Username" />
+              placeholder="heure prévue" />
           </div>
           <div class="form-group">
             <label for="exampleInputUsername1">Enseignant</label>
@@ -46,10 +46,8 @@
           <div class="d-flex justify-content-around">
             <button class="btn btn-light">Annulé</button>
             <button type="submit" class="btn btn-secondary">Suivant</button>
-            <a href="{% url 'enregistement' %}">
-              <button type="submit" class="btn btn-primary me-2">
-                Terminer
-              </button>
+            <a href="{% url 'app' %}">
+              <button class="btn btn-primary me-2">Terminer</button>
             </a>
           </div>
         </form>
