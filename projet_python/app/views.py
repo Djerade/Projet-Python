@@ -54,20 +54,11 @@ def generate():
                 "nom_jour": jours[k],
                 "ue_jour": martierjournee
             })
-          
-
-
-
+        martierjournee.clear()
         emploi_temps_global.append(emploi_temps_semain)
     
+    emploi_temps_semain.clear()
     
-    
-    for x in  emploi_temps_semain:
-        print("---" + x['nom_jour']+ "---")
-        for ue in x['ue_jour']:
-            print("-", ue.titre ," ", ue.heure )
-                
-        
 
 
             
@@ -75,14 +66,26 @@ def app(request):
     if list_ues.size_list() != 0 :
         generate()
         template = loader.get_template('index.html')
+        duree = estimation_duree()
         context = {
-            "emploi_temps_global": emploi_temps_global
+            "emploi_temps_global": emploi_temps_global,
+            "duree": duree,
         }    
         return HttpResponse(template.render(context, request))
     else:
         template = loader.get_template('index.html')
         return HttpResponse(template.render())
 
+def refraiche(request):
+    emploi_temps_global.clear()
+    generate()
+    template = loader.get_template('index.html')
+    duree = estimation_duree()
+    context = {
+        "emploi_temps_global": emploi_temps_global,
+        "duree": duree,
+    }    
+    return HttpResponse(template.render(context, request))
 
 
 def enregistement(request):

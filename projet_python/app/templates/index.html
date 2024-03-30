@@ -6,15 +6,20 @@
   </a>
   {% else %}
   <div class="row">
-    <div class="mb-3 d-flex justify-content-end">
-      <a href="{% url 'app' %}">
-        <button type="submit" class="btn btn-primary w-5 me-2">sd</button>
-      </a>
-      <a href="{% url 'enregistement' %}">
-        <button type="submit" class="btn btn-primary w-5 me-2">
-          Enregistrement
-        </button>
-      </a>
+    <div class="mb-3 d-flex justify-content-between">
+      <h4 class="card-title">Semaine estimée {{ duree }}</h4>
+      <div class="d-flex">
+        <a href="{% url 'refraiche' %}">
+          <button type="submit" class="btn btn-secondary w-5 me-2">
+            refraiche
+          </button>
+        </a>
+        <a href="{% url 'enregistement' %}">
+          <button type="submit" class="btn btn-primary w-5 me-2">
+            Enregistrement
+          </button>
+        </a>
+      </div>
     </div>
     {% for semaine in emploi_temps_global %}
     <div class="col-lg-6 grid-margin stretch-card">
@@ -61,32 +66,4 @@
   {% endif %}
 </div>
 
-{% endblock content %} {% comment %}
-<div class="w-50 mt-9 margin-top-5">
-  {% for semaine in emploi_temps_global %}
-  <table class="table card mb-3">
-    {% comment %}
-    <thead>
-      <tr>
-        <th scope="col">jours</th>
-        <th scope="col">Matière</th>
-        <th scope="col">Matière</th>
-        <th scope="col">Matière</th>
-      </tr>
-    </thead>
-
-    <tbody>
-      {% for journee in semaine %} {% for key, value in journee.items %}
-      <tr>
-        {% if key == 'nom_jour' %}
-        <th scope="row">{{ value }}</th>
-        {% else %} {% for ue in value %}
-        <td>{{ ue.titre }}</td>
-        {% endfor %} {% endif %}
-      </tr>
-      {% endfor %} {% endfor %}
-    </tbody>
-  </table>
-  {% endfor%}
-</div>
-{% endcomment %}
+{% endblock content %}

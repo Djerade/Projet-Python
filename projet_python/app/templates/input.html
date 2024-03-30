@@ -1,12 +1,9 @@
 {% extends "_base.html" %} {% block content %} {% load static %}
-<div class="content-wrapper">
+<div class="content-wrapper justify-content-end">
   <div class="col-md-6 grid-margin stretch-card">
     <div class="card">
       <div class="card-body">
         <h4 class="card-title">Nouvelle Matière</h4>
-        {% comment %}
-        <p class="card-description">Basic form layout</p>
-        {% endcomment %}
         <form action="" method="POST" class="forms-sample">
           {% csrf_token %}
           <div class="form-group">
