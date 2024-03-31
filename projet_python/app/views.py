@@ -1,15 +1,16 @@
 from django.template import loader
 from django.shortcuts import render
 from django.http import HttpResponse
-# Modules
+import copy
 import random
+# Modules
 from app.Model.list_matier import ListUe
 from app.Model.classMatier import Matier
 
 # varaibles globales
 list_ues = ListUe()
   
-emploi_temps_global= [] 
+# emploi_temps_global= [] 
 
 jours = ["Lundi", "Mardi", "Mercredi", "Jeudi","Vendredi", "Samedi" ]
 
@@ -26,10 +27,8 @@ def estimation_duree():
 
 
     
-def generate():
-    emploi_temps_global.clear()
-    list_ues_copy = []
-    list_ues_copy = list_ues
+def generate(list_ues_copy):
+    emploi_temps_global = []
     for i in  range(0, estimation_duree()):
         emploi_temps_semain= [] 
         for k in  range(0,len(jours)):
@@ -56,18 +55,20 @@ def generate():
         # martierjournee.clear()
         emploi_temps_global.append(emploi_temps_semain)
     
+    return  emploi_temps_global
     # emploi_temps_semain.clear()
+    
+    
     
 
 
-            
 def app(request):
     if list_ues.size_list() != 0 :
-        generate()
+        list_ues_copy = copy.deepcopy(list_ues)
         template = loader.get_template('index.html')
         duree = estimation_duree()
         context = {
-            "emploi_temps_global": emploi_temps_global,
+            "emploi_temps_global": generate(list_ues_copy),
             "duree": duree,
         }    
         return HttpResponse(template.render(context, request))
@@ -76,17 +77,17 @@ def app(request):
         return HttpResponse(template.render())
 
 def refraiche(request):
-    generate()
+    list_ues_copy = copy.deepcopy(list_ues)
     template = loader.get_template('index.html')
     duree = estimation_duree()
     context = {
-        "emploi_temps_global": emploi_temps_global,
+        "emploi_temps_global": generate(list_ues_copy),
         "duree": duree,
     }    
     return HttpResponse(template.render(context, request))
 
-
 def enregistement(request):
+    
     if request.method=="POST":
         ue = Matier()
         ue.titre = request.POST['titre']
