@@ -3,6 +3,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 import copy
 import random
+
 # Modules
 from app.Model.list_matier import ListUe
 from app.Model.classMatier import Matier
