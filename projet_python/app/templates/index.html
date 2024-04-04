@@ -49,7 +49,9 @@
                     <td>{{ value }}</td>
                     {% else %}
                     <td class="align-content-center">
+                      {% if value.0.titre != "" %}
                       <p class="card-description">Salle <code>Agora</code></p>
+                      {% endif %}
                       <div class="col">
                         <p class="fw-bold">{{ value.0.titre }}</p>
                         <p class="card-description">{{ value.0.enseignant }}</p>
@@ -58,8 +60,30 @@
                         Crédit <code>{{ value.0.credit }}</code>
                       </p>
                     </td>
-                    <td>{{ value.1.titre }}</td>
-                    <td>{{ value.2.titre }}</td>
+                    <td class="align-content-center">
+                      {% if value.0.titre != "" %}
+                      <p class="card-description">Salle <code>Agora</code></p>
+                      {% endif %}
+                      <div class="col">
+                        <p class="fw-bold">{{ value.1.titre }}</p>
+                        <p class="card-description">{{ value.1.enseignant }}</p>
+                      </div>
+                      <p class="card-description">
+                        Crédit <code>{{ value.1.credit }}</code>
+                      </p>
+                    </td>
+                    <td class="align-content-center">
+                      {% if value.0.titre != "" %}
+                      <p class="card-description">Salle <code>Agora</code></p>
+                      {% endif %}
+                      <div class="col">
+                        <p class="fw-bold">{{ value.2.titre }}</p>
+                        <p class="card-description">{{ value.2.enseignant }}</p>
+                      </div>
+                      <p class="card-description">
+                        Crédit <code>{{ value.2.credit }}</code>
+                      </p>
+                    </td>
                     {% endif %}
                   </div>
                   {% endfor %}
