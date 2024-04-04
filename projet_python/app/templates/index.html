@@ -22,21 +22,22 @@
       </div>
     </div>
     {% for semaine in emploi_temps_global %}
-    <div class="col-lg-6 grid-margin stretch-card">
+    <div class="col-lg-9 grid-margin stretch-card">
       <div class="card">
         <div class="card-body">
           {% comment %}
           <h4 class="card-title">Basic Table</h4>
-          <p class="card-description">{{ }} <code>.table</code></p>
+          <p class="card-description">ser <code>.table</code></p>
           {% endcomment %}
+
           <div class="table-responsive">
             <table class="table">
               <thead>
                 <tr>
                   <th>Jour</th>
-                  <th>3h</th>
-                  <th>3h</th>
-                  <th>3h</th>
+                  <th>7h:00mn-10h:00mn</th>
+                  <th>10h:30mn-13h:30mn</th>
+                  <th>14h:00mn-17h:00mn</th>
                 </tr>
               </thead>
               <tbody>
@@ -47,7 +48,16 @@
                     {% if key == 'nom_jour'%}
                     <td>{{ value }}</td>
                     {% else %}
-                    <td>{{ value.0.titre }}</td>
+                    <td class="align-content-center">
+                      <p class="card-description">Salle <code>Agora</code></p>
+                      <div class="col">
+                        <p class="fw-bold">{{ value.0.titre }}</p>
+                        <p class="card-description">{{ value.0.enseignant }}</p>
+                      </div>
+                      <p class="card-description">
+                        Crédit <code>{{ value.0.credit }}</code>
+                      </p>
+                    </td>
                     <td>{{ value.1.titre }}</td>
                     <td>{{ value.2.titre }}</td>
                     {% endif %}

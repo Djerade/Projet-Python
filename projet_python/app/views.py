@@ -94,5 +94,6 @@ def enregistement(request):
         ue.titre = request.POST['titre']
         ue.credit = request.POST['credit']
         ue.heure = int(request.POST['heure'])
+        ue.enseignant = request.POST['enseignant']
         list_ues.add_matier(ue)
     return render(request, 'input.html' )

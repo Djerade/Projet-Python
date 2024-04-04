@@ -3,6 +3,7 @@ class Matier:
         self.titre  = ""
         self.credit  = 0
         self.heure  = 0
+        self.enseignant  = ""
         
     def __str__(self) -> str:
         return self.titre + "   " + str(self.credit) + "   " + str(self.heure)
