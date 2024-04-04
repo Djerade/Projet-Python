@@ -34,67 +34,40 @@
             <table class="table">
               <thead>
                 <tr>
-                  <th>Jour\Horraires</th>
-                  <th>7h:00mn-10h:00mn</th>
-                  <th>10h:30mn-13h:30mn</th>
-                  <th>14h:00mn-17h:00mn</th>
+                  <th>Lundi</th>
+                  <th>Lundi</th>
+                  <th>Lundi</th>
+                  <th>Lundi</th>
+                  <th>Lundi</th>
+                  <th>Lundi</th>
                 </tr>
               </thead>
               <tbody>
-                {% for journee in semaine %}
                 <tr>
-                  {% for key, value in journee.items %}
-                  <div>
-                    {% if key == 'nom_jour'%}
-                    <td>{{ value }}</td>
-                    {% else %}
-                    <td class="align-content-center">
-                      <div class="col">
-                        <p class="fw-bold">{{ value.0.titre }}</p>
-                        <p class="card-description">{{ value.0.enseignant }}</p>
-                      </div>
-                      {% if value.0.titre != "" %}
-                      <p class="card-description">
-                        Salle <code>{{ value.0.salle }}</code>
-                      </p>
-                      {% endif %}
-                      <p class="card-description">
-                        Crédit <code>{{ value.0.credit }}</code>
-                      </p>
-                    </td>
-                    <td class="align-content-center">
-                      <div class="col">
-                        <p class="fw-bold">{{ value.1.titre }}</p>
-                        <p class="card-description">{{ value.1.enseignant }}</p>
-                      </div>
-                      {% if value.0.titre != "" %}
-                      <p class="card-description">
-                        Salle <code>{{ value.1.salle }}</code>
-                      </p>
-                      {% endif %}
-                      <p class="card-description">
-                        Crédit <code>{{ value.1.credit }}</code>
-                      </p>
-                    </td>
-                    <td class="align-content-center">
-                      <div class="col">
-                        <p class="fw-bold">{{ value.2.titre }}</p>
-                        <p class="card-description">{{ value.2.enseignant }}</p>
-                      </div>
-                      {% if value.0.titre != "" %}
-                      <p class="card-description">
-                        Salle<code>{{ value.1.salle }}</code>
-                      </p>
-                      {% endif %}
-                      <p class="card-description">
-                        Crédit <code>{{ value.2.credit }}</code>
-                      </p>
-                    </td>
-                    {% endif %}
-                  </div>
-                  {% endfor %}
+                  <td>{{ semaine.0.ue_jour.0.titre }}</td>
+                  <td>{{ semaine.1.ue_jour.0.titre }}</td>
+                  <td>{{ semaine.2.ue_jour.0.titre }}</td>
+                  <td>{{ semaine.3.ue_jour.0.titre }}</td>
+                  <td>{{ semaine.4.ue_jour.0.titre }}</td>
+                  <td>{{ semaine.5.ue_jour.0.titre }}</td>
                 </tr>
-                {% endfor %}
+
+                <tr>
+                  <td>{{ semaine.0.ue_jour.1.titre }}</td>
+                  <td>{{ semaine.1.ue_jour.1.titre }}</td>
+                  <td>{{ semaine.2.ue_jour.1.titre }}</td>
+                  <td>{{ semaine.3.ue_jour.1.titre }}</td>
+                  <td>{{ semaine.4.ue_jour.1.titre }}</td>
+                  <td>{{ semaine.5.ue_jour.1.titre }}</td>
+                </tr>
+                <tr>
+                  <td>{{ semaine.0.ue_jour.2.titre }}</td>
+                  <td>{{ semaine.1.ue_jour.2.titre }}</td>
+                  <td>{{ semaine.2.ue_jour.2.titre }}</td>
+                  <td>{{ semaine.3.ue_jour.2.titre }}</td>
+                  <td>{{ semaine.4.ue_jour.2.titre }}</td>
+                  <td>{{ semaine.5.ue_jour.2.titre }}</td>
+                </tr>
               </tbody>
             </table>
           </div>

@@ -6,3 +6,6 @@ credits/UE(données
 equivalence credits
 heures), jours et
 horraires
+
+
+![alt text](image-1.png)
