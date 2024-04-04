@@ -35,38 +35,183 @@
               <thead>
                 <tr>
                   <th>Lundi</th>
-                  <th>Lundi</th>
-                  <th>Lundi</th>
-                  <th>Lundi</th>
-                  <th>Lundi</th>
-                  <th>Lundi</th>
+                  <th>Mardi</th>
+                  <th>Mercredi</th>
+                  <th>Jeudi</th>
+                  <th>vendredi</th>
+                  <th>Samedi</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td>{{ semaine.0.ue_jour.0.titre }}</td>
-                  <td>{{ semaine.1.ue_jour.0.titre }}</td>
-                  <td>{{ semaine.2.ue_jour.0.titre }}</td>
-                  <td>{{ semaine.3.ue_jour.0.titre }}</td>
-                  <td>{{ semaine.4.ue_jour.0.titre }}</td>
-                  <td>{{ semaine.5.ue_jour.0.titre }}</td>
+                  <td>
+                    <p class="fw-bold">{{ semaine.0.ue_jour.0.titre }}</p>
+                    <p class="card-description">
+                      Crédit <code>{{ semaine.0.ue_jour.0.credit }}</code>
+                    </p>
+                    <p class="card-description">
+                      {{ semaine.0.ue_jour.0.enseignant }}
+                    </p>
+                  </td>
+                  <td>
+                    <p class="fw-bold">{{ semaine.1.ue_jour.0.titre }}</p>
+                    <p class="card-description">
+                      Crédit <code>{{ semaine.1.ue_jour.0.credit }}</code>
+                    </p>
+                    <p class="card-description">
+                      {{ semaine.1.ue_jour.0.enseignant }}
+                    </p>
+                  </td>
+                  <td>
+                    <p class="fw-bold">{{ semaine.2.ue_jour.0.titre }}</p>
+                    <p class="card-description">
+                      Crédit <code>{{ semaine.2.ue_jour.0.credit }}</code>
+                    </p>
+                    <p class="card-description">
+                      {{ semaine.2.ue_jour.0.enseignant }}
+                    </p>
+                  </td>
+                  <td>
+                    <p class="fw-bold">{{ semaine.3.ue_jour.0.titre }}</p>
+                    <p class="card-description">
+                      Crédit <code>{{ semaine.3.ue_jour.0.credit }}</code>
+                    </p>
+                    <p class="card-description">
+                      {{ semaine.3.ue_jour.0.enseignant }}
+                    </p>
+                  </td>
+                  <td>
+                    <p class="fw-bold">{{ semaine.4.ue_jour.0.titre }}</p>
+                    <p class="card-description">
+                      Crédit <code>{{ semaine.4.ue_jour.0.credit }}</code>
+                    </p>
+                    <p class="card-description">
+                      {{ semaine.4.ue_jour.0.enseignant }}
+                    </p>
+                  </td>
+                  <td>
+                    <p class="fw-bold">{{ semaine.5.ue_jour.0.titre }}</p>
+                    <p class="card-description">
+                      Crédit <code>{{ semaine.5.ue_jour.0.credit }}</code>
+                    </p>
+                    <p class="card-description">
+                      {{semaine.5.ue_jour.0.enseignant }}
+                    </p>
+                  </td>
                 </tr>
 
                 <tr>
-                  <td>{{ semaine.0.ue_jour.1.titre }}</td>
-                  <td>{{ semaine.1.ue_jour.1.titre }}</td>
-                  <td>{{ semaine.2.ue_jour.1.titre }}</td>
-                  <td>{{ semaine.3.ue_jour.1.titre }}</td>
-                  <td>{{ semaine.4.ue_jour.1.titre }}</td>
-                  <td>{{ semaine.5.ue_jour.1.titre }}</td>
+                  <td>
+                    <p class="fw-bold">{{ semaine.0.ue_jour.1.titre }}</p>
+                    <p class="card-description">
+                      Crédit <code>{{ semaine.0.ue_jour.1.credit }}</code>
+                    </p>
+                    <p class="card-description">
+                      {{ semaine.0.ue_jour.1.enseignant }}
+                    </p>
+                  </td>
+                  <td>
+                    <p class="fw-bold">{{ semaine.1.ue_jour.1.titre }}</p>
+                    <p class="card-description">
+                      Crédit <code>{{ semaine.1.ue_jour.1.credit }}</code>
+                    </p>
+                    <p class="card-description">
+                      {{ semaine.1.ue_jour.1.enseignant }}
+                    </p>
+                  </td>
+                  <td>
+                    <p class="fw-bold">{{ semaine.2.ue_jour.1.titre }}</p>
+                    <p class="card-description">
+                      Crédit <code>{{ semaine.2.ue_jour.1.credit }}</code>
+                    </p>
+                    <p class="card-description">
+                      {{ semaine.2.ue_jour.1.enseignant }}
+                    </p>
+                  </td>
+                  <td>
+                    <p class="fw-bold">{{ semaine.3.ue_jour.1.titre }}</p>
+                    <p class="card-description">
+                      Crédit <code>{{ semaine.3.ue_jour.1.credit }}</code>
+                    </p>
+                    <p class="card-description">
+                      {{ semaine.3.ue_jour.1.enseignant }}
+                    </p>
+                  </td>
+                  <td>
+                    <p class="fw-bold">{{ semaine.4.ue_jour.1.titre }}</p>
+                    <p class="card-description">
+                      Crédit <code>{{ semaine.4.ue_jour.1.credit }}</code>
+                    </p>
+                    <p class="card-description">
+                      {{ semaine.4.ue_jour.1.enseignant }}
+                    </p>
+                  </td>
+                  <td>
+                    {{ semaine.5.ue_jour.1.titre }}
+                    <p class="fw-bold">{{ semaine.5.ue_jour.1.titre }}</p>
+                    <p class="card-description">
+                      Crédit <code>{{ semaine.5.ue_jour.1.credit }}</code>
+                    </p>
+                    <p class="card-description">
+                      {{ semaine.5.ue_jour.1.enseignant }}
+                    </p>
+                  </td>
                 </tr>
                 <tr>
-                  <td>{{ semaine.0.ue_jour.2.titre }}</td>
-                  <td>{{ semaine.1.ue_jour.2.titre }}</td>
-                  <td>{{ semaine.2.ue_jour.2.titre }}</td>
-                  <td>{{ semaine.3.ue_jour.2.titre }}</td>
-                  <td>{{ semaine.4.ue_jour.2.titre }}</td>
-                  <td>{{ semaine.5.ue_jour.2.titre }}</td>
+                  <td>
+                    <p class="fw-bold">{{ semaine.0.ue_jour.2.titre }}</p>
+                    <p class="card-description">
+                      Crédit <code>{{ semaine.0.ue_jour.2.credit }}</code>
+                    </p>
+                    <p class="card-description">
+                      {{ semaine.0.ue_jour.2.enseignant }}
+                    </p>
+                  </td>
+                  <td>
+                    <p class="fw-bold">{{ semaine.1.ue_jour.2.titre }}</p>
+                    <p class="card-description">
+                      Crédit <code>{{ semaine.1.ue_jour.2.credit }}</code>
+                    </p>
+                    <p class="card-description">
+                      {{ semaine.1.ue_jour.2.enseignant }}
+                    </p>
+                  </td>
+                  <td>
+                    <p class="fw-bold">{{ semaine.2.ue_jour.2.titre }}</p>
+                    <p class="card-description">
+                      Crédit <code>{{ semaine.2.ue_jour.2.credit }}</code>
+                    </p>
+                    <p class="card-description">
+                      {{ semaine.2.ue_jour.2.enseignant }}
+                    </p>
+                  </td>
+                  <td>
+                    <p class="fw-bold">{{ semaine.3.ue_jour.2.titre }}</p>
+                    <p class="card-description">
+                      Crédit <code>{{ semaine.3.ue_jour.2.credit }}</code>
+                    </p>
+                    <p class="card-description">
+                      {{ semaine.3.ue_jour.2.enseignant }}
+                    </p>
+                  </td>
+                  <td>
+                    <p class="fw-bold">{{ semaine.4.ue_jour.2.titre }}</p>
+                    <p class="card-description">
+                      Crédit <code>{{ semaine.4.ue_jour.2.credit }}</code>
+                    </p>
+                    <p class="card-description">
+                      {{ semaine.4.ue_jour.2.enseignant }}
+                    </p>
+                  </td>
+                  <td>
+                    <p class="fw-bold">{{ semaine.5.ue_jour.2.titre }}</p>
+                    <p class="card-description">
+                      Crédit <code>{{ semaine.5.ue_jour.2.credit }}</code>
+                    </p>
+                    <p class="card-description">
+                      {{ semaine.5.ue_jour.2.enseignant }}
+                    </p>
+                  </td>
                 </tr>
               </tbody>
             </table>
