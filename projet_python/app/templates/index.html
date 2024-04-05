@@ -22,39 +22,221 @@
       </div>
     </div>
     {% for semaine in emploi_temps_global %}
-    <div class="col-lg-6 grid-margin stretch-card">
+    <div class="col-lg-19 grid-margin stretch-card">
       <div class="card">
         <div class="card-body">
           {% comment %}
           <h4 class="card-title">Basic Table</h4>
-          <p class="card-description">{{ }} <code>.table</code></p>
+          <p class="card-description">ser <code>.table</code></p>
           {% endcomment %}
+
           <div class="table-responsive">
             <table class="table">
               <thead>
                 <tr>
-                  <th>Jour</th>
-                  <th>3h</th>
-                  <th>3h</th>
-                  <th>3h</th>
+                  <th>Horaires</th>
+                  <th>Lundi</th>
+                  <th>Mardi</th>
+                  <th>Mercredi</th>
+                  <th>Jeudi</th>
+                  <th>vendredi</th>
+                  <th>Samedi</th>
                 </tr>
               </thead>
               <tbody>
-                {% for journee in semaine %}
                 <tr>
-                  {% for key, value in journee.items %}
-                  <div>
-                    {% if key == 'nom_jour'%}
-                    <td>{{ value }}</td>
-                    {% else %}
-                    <td>{{ value.0.titre }}</td>
-                    <td>{{ value.1.titre }}</td>
-                    <td>{{ value.2.titre }}</td>
-                    {% endif %}
-                  </div>
-                  {% endfor %}
+                  <td>
+                    <p class="card-description">
+                      <code>7h:00mn</code>
+                    </p>
+                    <p class="card-description">
+                      <code>10h:00mn</code>
+                    </p>
+                  </td>
+                  <td>
+                    <p class="fw-bold">{{ semaine.0.ue_jour.0.titre }}</p>
+                    <p class="card-description">
+                      Crédit <code>{{ semaine.0.ue_jour.0.credit }}</code>
+                    </p>
+                    <p class="card-description">
+                      {{ semaine.0.ue_jour.0.enseignant }}
+                    </p>
+                  </td>
+                  <td>
+                    <p class="fw-bold">{{ semaine.1.ue_jour.0.titre }}</p>
+                    <p class="card-description">
+                      Crédit <code>{{ semaine.1.ue_jour.0.credit }}</code>
+                    </p>
+                    <p class="card-description">
+                      {{ semaine.1.ue_jour.0.enseignant }}
+                    </p>
+                  </td>
+                  <td>
+                    <p class="fw-bold">{{ semaine.2.ue_jour.0.titre }}</p>
+                    <p class="card-description">
+                      Crédit <code>{{ semaine.2.ue_jour.0.credit }}</code>
+                    </p>
+                    <p class="card-description">
+                      {{ semaine.2.ue_jour.0.enseignant }}
+                    </p>
+                  </td>
+                  <td>
+                    <p class="fw-bold">{{ semaine.3.ue_jour.0.titre }}</p>
+                    <p class="card-description">
+                      Crédit <code>{{ semaine.3.ue_jour.0.credit }}</code>
+                    </p>
+                    <p class="card-description">
+                      {{ semaine.3.ue_jour.0.enseignant }}
+                    </p>
+                  </td>
+                  <td>
+                    <p class="fw-bold">{{ semaine.4.ue_jour.0.titre }}</p>
+                    <p class="card-description">
+                      Crédit <code>{{ semaine.4.ue_jour.0.credit }}</code>
+                    </p>
+                    <p class="card-description">
+                      {{ semaine.4.ue_jour.0.enseignant }}
+                    </p>
+                  </td>
+                  <td>
+                    <p class="fw-bold">{{ semaine.5.ue_jour.0.titre }}</p>
+                    <p class="card-description">
+                      Crédit <code>{{ semaine.5.ue_jour.0.credit }}</code>
+                    </p>
+                    <p class="card-description">
+                      {{semaine.5.ue_jour.0.enseignant }}
+                    </p>
+                  </td>
                 </tr>
-                {% endfor %}
+
+                <tr>
+                  <td>
+                    <p class="card-description">
+                      <code>10h:30mn</code>
+                    </p>
+                    <p class="card-description">
+                      <code>13h:30mn</code>
+                    </p>
+                  </td>
+                  <td>
+                    <p class="fw-bold">{{ semaine.0.ue_jour.1.titre }}</p>
+                    <p class="card-description">
+                      Crédit <code>{{ semaine.0.ue_jour.1.credit }}</code>
+                    </p>
+                    <p class="card-description">
+                      {{ semaine.0.ue_jour.1.enseignant }}
+                    </p>
+                  </td>
+                  <td>
+                    <p class="fw-bold">{{ semaine.1.ue_jour.1.titre }}</p>
+                    <p class="card-description">
+                      Crédit <code>{{ semaine.1.ue_jour.1.credit }}</code>
+                    </p>
+                    <p class="card-description">
+                      {{ semaine.1.ue_jour.1.enseignant }}
+                    </p>
+                  </td>
+                  <td>
+                    <p class="fw-bold">{{ semaine.2.ue_jour.1.titre }}</p>
+                    <p class="card-description">
+                      Crédit <code>{{ semaine.2.ue_jour.1.credit }}</code>
+                    </p>
+                    <p class="card-description">
+                      {{ semaine.2.ue_jour.1.enseignant }}
+                    </p>
+                  </td>
+                  <td>
+                    <p class="fw-bold">{{ semaine.3.ue_jour.1.titre }}</p>
+                    <p class="card-description">
+                      Crédit <code>{{ semaine.3.ue_jour.1.credit }}</code>
+                    </p>
+                    <p class="card-description">
+                      {{ semaine.3.ue_jour.1.enseignant }}
+                    </p>
+                  </td>
+                  <td>
+                    <p class="fw-bold">{{ semaine.4.ue_jour.1.titre }}</p>
+                    <p class="card-description">
+                      Crédit <code>{{ semaine.4.ue_jour.1.credit }}</code>
+                    </p>
+                    <p class="card-description">
+                      {{ semaine.4.ue_jour.1.enseignant }}
+                    </p>
+                  </td>
+                  <td>
+                    <p class="fw-bold">{{ semaine.5.ue_jour.1.titre }}</p>
+                    <p class="card-description">
+                      Crédit <code>{{ semaine.5.ue_jour.1.credit }}</code>
+                    </p>
+                    <p class="card-description">
+                      {{ semaine.5.ue_jour.1.enseignant }}
+                    </p>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <p class="card-description">
+                      <code>14h:00mn</code>
+                    </p>
+                    <p class="card-description">
+                      <code>17h:00mn</code>
+                    </p>
+                  </td>
+                  <td>
+                    <p class="fw-bold">{{ semaine.0.ue_jour.2.titre }}</p>
+                    <p class="card-description">
+                      Crédit <code>{{ semaine.0.ue_jour.2.credit }}</code>
+                    </p>
+                    <p class="card-description">
+                      {{ semaine.0.ue_jour.2.enseignant }}
+                    </p>
+                  </td>
+                  <td>
+                    <p class="fw-bold">{{ semaine.1.ue_jour.2.titre }}</p>
+                    <p class="card-description">
+                      Crédit <code>{{ semaine.1.ue_jour.2.credit }}</code>
+                    </p>
+                    <p class="card-description">
+                      {{ semaine.1.ue_jour.2.enseignant }}
+                    </p>
+                  </td>
+                  <td>
+                    <p class="fw-bold">{{ semaine.2.ue_jour.2.titre }}</p>
+                    <p class="card-description">
+                      Crédit <code>{{ semaine.2.ue_jour.2.credit }}</code>
+                    </p>
+                    <p class="card-description">
+                      {{ semaine.2.ue_jour.2.enseignant }}
+                    </p>
+                  </td>
+                  <td>
+                    <p class="fw-bold">{{ semaine.3.ue_jour.2.titre }}</p>
+                    <p class="card-description">
+                      Crédit <code>{{ semaine.3.ue_jour.2.credit }}</code>
+                    </p>
+                    <p class="card-description">
+                      {{ semaine.3.ue_jour.2.enseignant }}
+                    </p>
+                  </td>
+                  <td>
+                    <p class="fw-bold">{{ semaine.4.ue_jour.2.titre }}</p>
+                    <p class="card-description">
+                      Crédit <code>{{ semaine.4.ue_jour.2.credit }}</code>
+                    </p>
+                    <p class="card-description">
+                      {{ semaine.4.ue_jour.2.enseignant }}
+                    </p>
+                  </td>
+                  <td>
+                    <p class="fw-bold">{{ semaine.5.ue_jour.2.titre }}</p>
+                    <p class="card-description">
+                      Crédit <code>{{ semaine.5.ue_jour.2.credit }}</code>
+                    </p>
+                    <p class="card-description">
+                      {{ semaine.5.ue_jour.2.enseignant }}
+                    </p>
+                  </td>
+                </tr>
               </tbody>
             </table>
           </div>
