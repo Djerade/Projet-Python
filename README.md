@@ -7,7 +7,7 @@ equivalence credits
 heures), jours et
 horraires
 
- le dépôt GitHub: 
+ le dépôt GitHub: https://github.com/Djerade/Projet-Python.git
 
  
 Pour exécuter ce projet , suivez ces étapes :
